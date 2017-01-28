@@ -10,11 +10,11 @@ if (EXISTS "/etc/debian_version")
     SET(INSTALLATION_SUFFIX_64 "/lib/x86_64-linux-gnu/" CACHE STRING "")
 else()
     SET(INSTALLATION_SUFFIX_32 "/lib32/" CACHE STRING "")
-    SET(INSTALLATION_SUFFIX_64 "/lib64/" CACHE STRING "")
+    SET(INSTALLATION_SUFFIX_64 "/lib32/" CACHE STRING "")
 endif()
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib32)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib32)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/modules/")
 
@@ -72,7 +72,7 @@ add_subdirectory(src)
 
 ##### Install config #####
 install(DIRECTORY src/glxosd/conf/
-        DESTINATION /etc/glxosd/)
+        DESTINATION /etc/glxosd32/)
 ##### Create launcher #####
 configure_file(
     ${PROJECT_SOURCE_DIR}/launcher_template.sh.in
