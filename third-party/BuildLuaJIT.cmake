@@ -3,7 +3,7 @@ include(ExternalProject)
 
 set(INSTALL_COMMAND
 		make
-		CFLAGS="\"-m32 -fPIC\""
+		CC="\"gcc -m32 -fPIC\""
 		BUILDMODE=static
 		Q=
 		PREFIX=${CMAKE_CURRENT_BINARY_DIR}/luajit-2.0.4
