@@ -1,4 +1,4 @@
-GLXOSD
+GLXOSD (Version fixed for 32-bit compilation on 64-bit systems)
 =============
 
 [Official website](https://glxosd.nickguletskii.com/)
